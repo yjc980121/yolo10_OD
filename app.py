@@ -64,7 +64,13 @@ if source_radio == settings.IMAGE:
                 try:
                     # Convert PIL image to OpenCV format
                     image_np = np.array(uploaded_image)
-                    _display_detected_frames(confidence, model, st, image_np)
+		    # Padded resize
+        	    img = letterbox(image_np, (640, 640), stride=2)[0]
+                    # Convert
+                    img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB
+                    img = np.ascontiguousarray(img)
+                    img = img/255.0  # 0 - 255 to 0.0 - 1.0
+                    _display_detected_frames(confidence, model, st, img)
                 except Exception as ex:
                     st.error("Error occurred while detecting objects.")
                     st.error(ex)
