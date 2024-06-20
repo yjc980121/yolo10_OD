@@ -67,7 +67,7 @@ if source_radio == settings.IMAGE:
                     # Load image using OpenCV
                     image_np = cv2.imdecode(np.fromstring(source_img.read(), np.uint8), 1)# BGR
                     # Convert image to YSBCR color space
-                    img_ysbcr = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+                    img_ysbcr = cv2.cvtColor(image_np, cv2.COLOR_BGR2YCrCb)
 		            # Padded resize
                     img = settings.letterbox(img_ysbcr)[0]
                     # Convert
