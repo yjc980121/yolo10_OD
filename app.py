@@ -66,13 +66,14 @@ if source_radio == settings.IMAGE:
                     # image_np = np.array(uploaded_image)
                     # Load image using OpenCV
                     image_np = cv2.imdecode(np.fromstring(source_img.read(), np.uint8), 1)# BGR
+                    # Convert image to YSBCR color space
+                    img_ysbcr = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
 		            # Padded resize
-                    img = settings.letterbox(image_np)[0]
+                    img = settings.letterbox(img_ysbcr)[0]
                     # Convert
-                    # img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB
+                    img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB
                     img = np.ascontiguousarray(img)
                     img = img/255.0  # 0 - 255 to 0.0 - 1.0
-                    img = img.astype(np.float32)
                     _display_detected_frames(confidence, model, st, img)
                 except Exception as ex:
                     st.error("Error occurred while detecting objects.")
