@@ -64,8 +64,8 @@ if source_radio == settings.IMAGE:
                 try:
                     # Convert PIL image to OpenCV format
                     image_np = np.array(uploaded_image)
-		    # Padded resize
-        	    img = letterbox(image_np, (640, 640), stride=2)[0]
+		            # Padded resize
+                    img = settings.letterbox(image_np)[0]
                     # Convert
                     img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB
                     img = np.ascontiguousarray(img)
