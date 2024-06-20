@@ -24,7 +24,7 @@ st.title("Object Detection using YOLOv10")
 st.sidebar.header("ML Model Config")
 
 # Model Options
-confidence = float(st.sidebar.slider("Select Model Confidence", 25, 100, 40)) / 100
+confidence = float(st.sidebar.slider("Select Model Confidence", 0, 100, 40)) / 100
 
 # Load Pre-trained ML Model
 model_path = Path(settings.DETECTION_MODEL)
@@ -62,19 +62,9 @@ if source_radio == settings.IMAGE:
         else:
             if st.sidebar.button('Detect Objects'):
                 try:
-                    # Convert PIL image to OpenCV format
-                    # image_np = np.array(uploaded_image)
-                    # Load image using OpenCV
-                    image_np = cv2.imdecode(np.fromstring(source_img.read(), np.uint8), 1)# BGR
-                    # Convert image to YSBCR color space
-                    img_ysbcr = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
-		            # Padded resize
-                    img = settings.letterbox(img_ysbcr)[0]
-                    # Convert
-                    # img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB
-                    # img = np.ascontiguousarray(img)
-                    # img = img/255.0  # 0 - 255 to 0.0 - 1.0
-                    _display_detected_frames(confidence, model, st, img)
+                    Convert PIL image to OpenCV format
+                    image_np = np.array(uploaded_image)
+                    _display_detected_frames(confidence, model, st, image_np)
                 except Exception as ex:
                     st.error("Error occurred while detecting objects.")
                     st.error(ex)
