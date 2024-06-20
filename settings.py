@@ -17,24 +17,19 @@ ROOT = root_path.relative_to(Path.cwd())
 # Sources
 IMAGE = 'Image'
 VIDEO = 'Video'
-# YOUTUBE = 'YouTube'
-# WEBCAM = 'Webcam'
-# SOURCES_LIST = [IMAGE, VIDEO, YOUTUBE, WEBCAM]
 SOURCES_LIST = [IMAGE, VIDEO]
 
 # Images config
 IMAGES_DIR = ROOT / 'images'
 DEFAULT_IMAGE = IMAGES_DIR / 'image_1.jpg'
-DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'image_1.jpg'
+DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'image_1_output.jpg'
 
 # Videos config
 VIDEO_DIR = ROOT / 'videos'
 VIDEO_1_PATH = VIDEO_DIR / 'video_1.mp4'
-VIDEO_2_PATH = VIDEO_DIR / 'video_2.mp4'
 
 VIDEOS_DICT = {
-    'video_1': VIDEO_1_PATH,
-    'video_2': VIDEO_2_PATH
+    'video_1': VIDEO_1_PATH
 }
 
 # ML Model config
