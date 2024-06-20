@@ -63,7 +63,8 @@ if source_radio == settings.IMAGE:
             if st.sidebar.button('Detect Objects'):
                 try:
                     # Convert PIL image to OpenCV format
-                    image_np = np.array(uploaded_image)
+                    # image_np = np.array(uploaded_image)
+                    image_np = cv2.imread(uploaded_image)  # BGR
 		            # Padded resize
                     img = settings.letterbox(image_np)[0]
                     # Convert
