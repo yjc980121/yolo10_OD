@@ -62,7 +62,7 @@ if source_radio == settings.IMAGE:
         else:
             if st.sidebar.button('Detect Objects'):
                 try:
-                    Convert PIL image to OpenCV format
+                    # Convert PIL image to OpenCV format
                     image_np = np.array(uploaded_image)
                     _display_detected_frames(confidence, model, st, image_np)
                 except Exception as ex:
