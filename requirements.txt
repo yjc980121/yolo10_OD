@@ -6,3 +6,4 @@ pathlib
 matplotlib==3.8.4
 supervision
 git+https://github.com/THU-MIG/yolov10.git
+huggingface-hub
