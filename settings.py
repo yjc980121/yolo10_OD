@@ -30,9 +30,11 @@ DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'image_1.jpg'
 # Videos config
 VIDEO_DIR = ROOT / 'videos'
 VIDEO_1_PATH = VIDEO_DIR / 'video_1.mp4'
+VIDEO_2_PATH = VIDEO_DIR / 'video_2.mp4'
 
 VIDEOS_DICT = {
-    'video_1': VIDEO_1_PATH
+    'video_1': VIDEO_1_PATH,
+    'video_2': VIDEO_2_PATH
 }
 
 # ML Model config
