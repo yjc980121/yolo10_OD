@@ -65,7 +65,7 @@ if source_radio == settings.IMAGE:
                     # Convert PIL image to OpenCV format
                     # image_np = np.array(uploaded_image)
                     # Load image using OpenCV
-                    image_np = cv2.imdecode(np.fromstring(uploaded_image.read(), np.uint8), 1)# BGR
+                    image_np = cv2.imdecode(np.fromstring(source_img.read(), np.uint8), 1)# BGR
 		            # Padded resize
                     img = settings.letterbox(image_np)[0]
                     # Convert
