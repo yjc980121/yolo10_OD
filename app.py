@@ -70,8 +70,8 @@ if source_radio == settings.IMAGE:
                     img = settings.letterbox(image_np)[0]
                     # Convert
                     # img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB
-                    # img = np.ascontiguousarray(img)
-                    # img = img/255.0  # 0 - 255 to 0.0 - 1.0
+                    img = np.ascontiguousarray(img)
+                    img = img/255.0  # 0 - 255 to 0.0 - 1.0
                     _display_detected_frames(confidence, model, st, img)
                 except Exception as ex:
                     st.error("Error occurred while detecting objects.")
