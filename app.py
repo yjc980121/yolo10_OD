@@ -24,7 +24,7 @@ st.title("Object Detection using YOLOv10")
 st.sidebar.header("ML Model Config")
 
 # Model Options
-confidence = float(st.sidebar.slider("Select Model Confidence", 0, 100, 40)) / 100
+confidence = float(st.sidebar.slider("Select Model Confidence", 0, 100, 20)) / 100
 
 # Load Pre-trained ML Model
 model_path = Path(settings.DETECTION_MODEL)
