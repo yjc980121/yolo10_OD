@@ -52,6 +52,6 @@ def attempt_download_from_hub(repo_id, hf_token=None):
 
 # ML Model config
 #MODEL_DIR = ROOT / 'weights'
-#DETECTION_MODEL = MODEL_DIR / 'yolov10m.pt'
+#DETECTION_MODEL = MODEL_DIR / 'yolov10x.pt'
 MODEL_PATH = attempt_download_from_hub("kadirnar/yolov10m", hf_token="hf_token")
 DETECTION_MODEL = MODEL_PATH
