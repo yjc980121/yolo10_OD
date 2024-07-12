@@ -35,5 +35,5 @@ VIDEOS_DICT = {
 # ML Model config
 #MODEL_DIR = ROOT / 'weights'
 #DETECTION_MODEL = MODEL_DIR / 'yolov10m.pt'
-MODEL_PATH = 'yolov10m.pt'
+MODEL_PATH = 'yolov10n.pt'
 DETECTION_MODEL = MODEL_PATH
